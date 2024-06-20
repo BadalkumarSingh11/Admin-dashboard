@@ -12,6 +12,10 @@ import GeographyChart from "../../components/GeographyChart";
 import BarChart from "../../components/BarChart";
 import StatBox from "../../components/StatBox";
 import ProgressCircle from "../../components/ProgressCircle";
+import LightbulbIcon from '@mui/icons-material/Lightbulb';
+import HighlightOffTwoToneIcon from '@mui/icons-material/HighlightOffTwoTone';
+import SolarPowerTwoToneIcon from '@mui/icons-material/SolarPowerTwoTone';
+
 
 const Dashboard = () => {
   const theme = useTheme();
@@ -21,7 +25,7 @@ const Dashboard = () => {
     <Box m="20px">
       {/* HEADER */}
       <Box display="flex" justifyContent="space-between" alignItems="center">
-        <Header title="DASHBOARD" subtitle="Welcome to your dashboard" />
+        <Header title="SOLAR STREET LIGHT DASHBOARD" subtitle="Welcome to your dashboard" />
 
         <Box>
           <Button
@@ -40,6 +44,7 @@ const Dashboard = () => {
       </Box>
 
       {/* GRID & CHARTS */}
+      
       <Box
         display="grid"
         gridTemplateColumns="repeat(12, 1fr)"
@@ -56,11 +61,11 @@ const Dashboard = () => {
         >
           <StatBox
             title="12,361"
-            subtitle="Emails Sent"
+            subtitle="SOLAR STREET LIGHT"
             progress="0.75"
-            increase="+14%"
+            // increase="+14%"
             icon={
-              <EmailIcon
+              <LightbulbIcon
                 sx={{ color: colors.greenAccent[600], fontSize: "26px" }}
               />
             }
@@ -75,11 +80,11 @@ const Dashboard = () => {
         >
           <StatBox
             title="431,225"
-            subtitle="Sales Obtained"
+            subtitle="HEALTHY STREET LIGHTS "
             progress="0.50"
-            increase="+21%"
+            // increase="+21%"
             icon={
-              <PointOfSaleIcon
+              <SolarPowerTwoToneIcon
                 sx={{ color: colors.greenAccent[600], fontSize: "26px" }}
               />
             }
@@ -94,11 +99,11 @@ const Dashboard = () => {
         >
           <StatBox
             title="32,441"
-            subtitle="New Clients"
+            subtitle="FAULTY STREET LIGHT "
             progress="0.30"
-            increase="+5%"
+            // increase="+5%"
             icon={
-              <PersonAddIcon
+              <HighlightOffTwoToneIcon
                 sx={{ color: colors.greenAccent[600], fontSize: "26px" }}
               />
             }
@@ -124,8 +129,165 @@ const Dashboard = () => {
           />
         </Box>
 
+
         {/* ROW 2 */}
         <Box
+          gridColumn="span 3"
+          backgroundColor={colors.primary[400]}
+          display="flex"
+          alignItems="center"
+          justifyContent="center"
+        >
+          <StatBox
+            title="12,361"
+            subtitle="TOTAL DISTRICTS"
+            progress="0.75"
+            // increase="+14%"
+            icon={
+              <LightbulbIcon
+                sx={{ color: colors.greenAccent[600], fontSize: "26px" }}
+              />
+            }
+          />
+        </Box>
+        <Box
+          gridColumn="span 3"
+          backgroundColor={colors.primary[400]}
+          display="flex"
+          alignItems="center"
+          justifyContent="center"
+        >
+          <StatBox
+            title="431,225"
+            subtitle="HEALTHY STREET LIGHTS "
+            progress="0.50"
+            // increase="+21%"
+            icon={
+              <SolarPowerTwoToneIcon
+                sx={{ color: colors.greenAccent[600], fontSize: "26px" }}
+              />
+            }
+          />
+        </Box>
+        <Box
+          gridColumn="span 3"
+          backgroundColor={colors.primary[400]}
+          display="flex"
+          alignItems="center"
+          justifyContent="center"
+        >
+          <StatBox
+            title="32,441"
+            subtitle="FAULTY STREET LIGHT "
+            progress="0.30"
+            // increase="+5%"
+            icon={
+              <HighlightOffTwoToneIcon
+                sx={{ color: colors.greenAccent[600], fontSize: "26px" }}
+              />
+            }
+          />
+        </Box>
+        <Box
+          gridColumn="span 3"
+          backgroundColor={colors.primary[400]}
+          display="flex"
+          alignItems="center"
+          justifyContent="center"
+        >
+          <StatBox
+            title="1,325,134"
+            subtitle=" CO2 EMISSION REDUCED KG "
+            progress="0.80"
+            increase="+43%"
+            icon={
+              <TrafficIcon
+                sx={{ color: colors.greenAccent[600], fontSize: "26px" }}
+              />
+            }
+          />
+        </Box>
+
+
+        <Box
+          gridColumn="span 3"
+          backgroundColor={colors.primary[400]}
+          display="flex"
+          alignItems="center"
+          justifyContent="center"
+        >
+          <StatBox
+            title="12,361"
+            subtitle="TOTAL DISTRICTS"
+            progress="0.75"
+            // increase="+14%"
+            icon={
+              <LightbulbIcon
+                sx={{ color: colors.greenAccent[600], fontSize: "26px" }}
+              />
+            }
+          />
+        </Box>
+        <Box
+          gridColumn="span 3"
+          backgroundColor={colors.primary[400]}
+          display="flex"
+          alignItems="center"
+          justifyContent="center"
+        >
+          <StatBox
+            title="431,225"
+            subtitle="HEALTHY STREET LIGHTS "
+            progress="0.50"
+            // increase="+21%"
+            icon={
+              <SolarPowerTwoToneIcon
+                sx={{ color: colors.greenAccent[600], fontSize: "26px" }}
+              />
+            }
+          />
+        </Box>
+        <Box
+          gridColumn="span 3"
+          backgroundColor={colors.primary[400]}
+          display="flex"
+          alignItems="center"
+          justifyContent="center"
+        >
+          <StatBox
+            title="32,441"
+            subtitle="FAULTY STREET LIGHT "
+            progress="0.30"
+            // increase="+5%"
+            icon={
+              <HighlightOffTwoToneIcon
+                sx={{ color: colors.greenAccent[600], fontSize: "26px" }}
+              />
+            }
+          />
+        </Box>
+        <Box
+          gridColumn="span 3"
+          backgroundColor={colors.primary[400]}
+          display="flex"
+          alignItems="center"
+          justifyContent="center"
+        >
+          <StatBox
+            title="1,325,134"
+            subtitle=" CO2 EMISSION REDUCED KG "
+            progress="0.80"
+            increase="+43%"
+            icon={
+              <TrafficIcon
+                sx={{ color: colors.greenAccent[600], fontSize: "26px" }}
+              />
+            }
+          />
+        </Box>
+
+        {/* ROW 2 */}
+        {/* <Box
           gridColumn="span 8"
           gridRow="span 2"
           backgroundColor={colors.primary[400]}
@@ -214,7 +376,7 @@ const Dashboard = () => {
               </Box>
             </Box>
           ))}
-        </Box>
+        </Box> */}
 
         {/* ROW 3 */}
         <Box
@@ -224,7 +386,10 @@ const Dashboard = () => {
           p="30px"
         >
           <Typography variant="h5" fontWeight="600">
-            Campaign
+            Healty Street Light
+          </Typography>
+          <Typography variant="h5" fontWeight="600">
+            Faulty Street Light
           </Typography>
           <Box
             display="flex"
@@ -238,12 +403,22 @@ const Dashboard = () => {
               color={colors.greenAccent[500]}
               sx={{ mt: "15px" }}
             >
-              $48,352 revenue generated
+              Healthy : 90%      
+              {/* $48,352 revenue generated */}
             </Typography>
-            <Typography>Includes extra misc expenditures and costs</Typography>
+            {/* <Typography
+              variant="h5"
+              color={colors.greenAccent[500]}
+              sx={{ mt: "15px" }}
+            >
+              Faulty : 20%
+             
+            </Typography> */}
+            <Typography>  Faulty : 10%</Typography>
           </Box>
         </Box>
-        <Box
+
+        {/* <Box
           gridColumn="span 4"
           gridRow="span 2"
           backgroundColor={colors.primary[400]}
@@ -275,10 +450,21 @@ const Dashboard = () => {
           <Box height="200px">
             <GeographyChart isDashboard={true} />
           </Box>
-        </Box>
+        </Box> */}
       </Box>
     </Box>
   );
 };
 
 export default Dashboard;
+
+
+// UNPLUGGED CONTROLLERS
+// ENERGY SAVINGS KWH
+// CO2 EMISSION REDUCED KG
+// TOTAL WARDS
+// TOTAL PANCHAYATS
+// TOTAL BLOCKS
+// TOTAL BLOCKS
+// TOTAL DISTRICTS
+// TOTAL DISTRICTS

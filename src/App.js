@@ -17,15 +17,20 @@ import { ColorModeContext, useMode } from "./theme";
 import Calendar from "./scenes/calendar/calendar";
 import Login from "./Login";
 import Admindashboard from "./Admindashboard";
+import Pagenotfound from "./components/Pagenotfound";
+import SsLdata from "./scenes/SSL Data/SsLdata";
+import Tabularview from "./scenes/SSL Data/Tabularview";
+// import Table from "./scenes/table";
 function App() {
   const [theme, colorMode] = useMode();
   const [isSidebar, setIsSidebar] = useState(true);
-
   return (
     <Routes>
       <Route path="/" element={<Login />}></Route>
       <Route path="/Admin" element={<Admindashboard />} >
         <Route index element={<Dashboard />} />
+        <Route path="SSLDATA" element={<SsLdata />} />
+        <Route path="SSLDATA/:DeviceID" element={ <Tabularview />} />
         {/* <Route path="/login" element={<Login />} />
         <Route path="/team" element={<Team />} />
         <Route path="/contacts" element={<Contacts />} />
@@ -37,7 +42,13 @@ function App() {
         <Route path="/faq" element={<FAQ />} />
         <Route path="/calendar" element={<Calendar />} />
         <Route path="/geography" element={<Geography />} /> */}
+        
+       
+        
       </Route>
+      {/* <Route path="/tabulardata" element={ <Table /> } /> */}
+      
+      <Route path="*" element={<Pagenotfound />}/>
     </Routes>
     // <ColorModeContext.Provider value={colorMode}>
     //   <ThemeProvider theme={theme}>
