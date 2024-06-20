@@ -13,6 +13,14 @@ import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import { useNavigate } from 'react-router-dom';
+import axios from 'axios';
+
+// import * as React from 'react';
+import InputLabel from '@mui/material/InputLabel';
+import MenuItem from '@mui/material/MenuItem';
+import FormControl from '@mui/material/FormControl';
+import Select from '@mui/material/Select';
+
 function Copyright(props) {
   return (
     <Typography variant="body2" color="text.secondary" align="center" {...props}>
@@ -26,6 +34,36 @@ function Copyright(props) {
   );
 }
 
+
+  function SelectVariants() {
+  const [age, setAge] = React.useState('');
+
+  const handleChange = (event) => {
+    setAge(event.target.value);
+  };
+
+  return (
+    <div>
+      <FormControl variant="standard" sx={{ m: 1, minWidth: 120 }}>
+        <InputLabel id="demo-simple-select-standard-label">Age</InputLabel>
+        <Select
+          labelId="demo-simple-select-standard-label"
+          id="demo-simple-select-standard"
+          value={age}
+          onChange={handleChange}
+          label="Age"
+        >
+          <MenuItem value="">
+            <em>None</em>
+          </MenuItem>
+          <MenuItem value={10}>Logout</MenuItem>
+          <MenuItem value={20}>Twenty</MenuItem>
+          <MenuItem value={30}>Thirty</MenuItem>
+        </Select>
+      </FormControl>
+    </div>
+  );
+}
 // TODO remove, this demo shouldn't need to reset the theme.
 
 const defaultTheme = createTheme();
@@ -35,11 +73,26 @@ export default function SignIn() {
   const handleSubmit = (event) => {
     event.preventDefault();
     const data = new FormData(event.currentTarget);
+
+    axios.post("http://localhost:4000/api/v1/login", {
+      email: data.get('email'),
+      password: data.get('password')}).then(
+        (response)=>{
+          console.log(response.data);
+          if( response.data){
+            navigate("/Admin");
+          }
+        }
+      ).catch(
+        (err)=>{
+          console.log(err);
+        }
+      );
     console.log({
       email: data.get('email'),
       password: data.get('password'),
     });
-    navigate("/Admin");
+   
   };
 
   return (
@@ -90,6 +143,7 @@ export default function SignIn() {
               fullWidth
               variant="contained"
               sx={{ mt: 3, mb: 2 }}
+             
             >
               Log In
             </Button>
@@ -112,3 +166,4 @@ export default function SignIn() {
     </ThemeProvider>
   );
 }
+
