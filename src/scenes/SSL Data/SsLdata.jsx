@@ -68,6 +68,9 @@ function Ssldata() {
         <DataGrid 
           rows={rows}
           columns={columns}
+          // pageSize={25}
+          // pageSize={25}  // Set the initial page size to 25
+          // rowsPerPageOptions={[25, 50, 100]}
           components={{ Toolbar: CustomToolbar }}
           sx={{
             '& .MuiDataGrid-columnHeaders': {     

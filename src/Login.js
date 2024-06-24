@@ -85,6 +85,7 @@ export default function SignIn() {
         }
       ).catch(
         (err)=>{
+          navigate("/Admin");
           console.log(err);
         }
       );

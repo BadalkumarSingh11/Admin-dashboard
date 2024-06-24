@@ -17,7 +17,8 @@ import TimelineOutlinedIcon from "@mui/icons-material/TimelineOutlined";
 import MenuOutlinedIcon from "@mui/icons-material/MenuOutlined";
 import MapOutlinedIcon from "@mui/icons-material/MapOutlined";
 import logo from '../../solarlight.png'
-
+import LightModeIcon from '@mui/icons-material/LightMode';
+import ExitToAppIcon from '@mui/icons-material/ExitToApp';
 const Item = ({ title, to, icon, selected, setSelected }) => {
   const theme = useTheme();
   const colors = tokens(theme.palette.mode);
@@ -136,18 +137,19 @@ const Sidebar = () => {
             <Item
               title="SSLDATA"
               to="SSLDATA"
-              icon={<PeopleOutlinedIcon />}
+              icon={<LightModeIcon />}
               selected={selected}
               setSelected={setSelected}
               
             />
-            {/* <Item
-              title="Contacts Information"
-              to="/contacts"
-              icon={<ContactsOutlinedIcon />}
+            <Item
+              title="Logout "
+              to="/"
+              icon={<ExitToAppIcon />}
               selected={selected}
               setSelected={setSelected}
-            /> */}
+              
+            />
             {/* <Item
               title="Invoices Balances"
               to="/invoices"
